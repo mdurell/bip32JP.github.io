@@ -547,6 +547,7 @@
         $("#derived_private_key").val('');
         $("#derived_public_key").val('');
         $("#derived_private_key_wif").val('');
+        $("#derived_private_key_hex").val('');
         $("#derived_public_key_hex").val('');
         $("#addr").val('');
         $("#genAddrQR").val('');
@@ -575,9 +576,11 @@
             var bytes = [key_coin.private_prefix].concat(privkeyBytes).concat([1]);
             var checksum = Crypto.SHA256(Crypto.SHA256(bytes, {asBytes: true}), {asBytes: true}).slice(0, 4);
             $("#derived_private_key_wif").val(Bitcoin.Base58.encode(bytes.concat(checksum)))
+            $("#derived_private_key_hex").val(Crypto.util.bytesToHex(bytes))
         } else {
             $("#derived_private_key").val("No private key available");
             $("#derived_private_key_wif").val("No private key available");
+            $("#derived_private_key_hex").val("No private key available");
         }
 
         $("#derived_public_key").val(result.extended_public_key_string("base58"));
