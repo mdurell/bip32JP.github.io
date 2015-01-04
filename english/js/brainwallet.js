@@ -576,7 +576,7 @@
             var bytes = [key_coin.private_prefix].concat(privkeyBytes).concat([1]);
             var checksum = Crypto.SHA256(Crypto.SHA256(bytes, {asBytes: true}), {asBytes: true}).slice(0, 4);
             $("#derived_private_key_wif").val(Bitcoin.Base58.encode(bytes.concat(checksum)))
-            $("#derived_private_key_hex").val(Crypto.util.bytesToHex(bytes))
+            $("#derived_private_key_hex").val(Crypto.util.bytesToHex(result.eckey.priv.toByteArraySigned()))
         } else {
             $("#derived_private_key").val("No private key available");
             $("#derived_private_key_wif").val("No private key available");
