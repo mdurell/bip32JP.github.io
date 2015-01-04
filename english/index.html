@@ -27,7 +27,7 @@
     <script src="js/bitcoinsig.js"></script>
     <script src="js/brainwallet.js"></script>
   </head>
-  <body  onload="rng_seed_time();" onmousemove="s=(event.clientX * event.clientY) ; for (i=0 ; i <= rng_get_byte() + rng_get_byte() ; i++) {s += (s + 1) * rng_get_byte() + rng_get_byte() * rng_get_byte() + rng_get_byte()}; rng_seed_int(s);">
+  <body onload="rng_seed_time();" onmousemove="a = [] ; for (i=0 ; i < 64 ; i++) {a.push(rng_get_byte())} ; s = Crypto.SHA256(a, [event.clientX], [event.clientY], [(new Date).getTime()]); rng_seed_int(s);">
     <header class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
