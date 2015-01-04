@@ -575,8 +575,8 @@
             };
             var bytes = [key_coin.private_prefix].concat(privkeyBytes).concat([1]);
             var checksum = Crypto.SHA256(Crypto.SHA256(bytes, {asBytes: true}), {asBytes: true}).slice(0, 4);
-            $("#derived_private_key_wif").val(Bitcoin.Base58.encode(bytes.concat(checksum)))
-            $("#derived_private_key_hex").val(Crypto.util.bytesToHex(result.eckey.priv.toByteArraySigned()))
+            $("#derived_private_key_wif").val(Bitcoin.Base58.encode(bytes.concat(checksum)));
+            $("#derived_private_key_hex").val(Crypto.util.bytesToHex(privkeyBytes));
         } else {
             $("#derived_private_key").val("No private key available");
             $("#derived_private_key_wif").val("No private key available");
@@ -719,8 +719,8 @@
         $('#gen_from label input').on('change', onUpdateGenFrom );
         updateGenFrom();
 
-        $("#bip32_source_passphrase").val("awake book subject inch gentle blur grant damage process float month clown");
-        $("#bip32_source_key").val("xprv9s21ZrQH143K4KqQx9Zrf1eN8EaPQVFxM2Ast8mdHn7GKiDWzNEyNdduJhWXToy8MpkGcKjxeFWd8oBSvsz4PCYamxR7TX49pSpp3bmHVAY");
+        $("#bip32_source_passphrase").val("seven tattoo side laugh oil ready word deposit frame grant merry shield ride buzz display camp virus burst hip example run impact health finish");
+        $("#bip32_source_key").val("xprv9s21ZrQH143K2MEsompJYjKzjrtFDJrnbWWcN9wMDY8bSqzALQfSzesCaaUYDJiNkNvcExpswHrWJsM8mez9goDc8kWLD6qY52ME9Db3qYZ");
         onInput("#bip32_source_passphrase", onUpdateSourcePassphrase);
         onInput("#bip39_passphrase", onUpdateSourcePassphrase);
         
