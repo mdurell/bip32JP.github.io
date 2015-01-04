@@ -719,8 +719,8 @@
         $('#gen_from label input').on('change', onUpdateGenFrom );
         updateGenFrom();
 
-        $("#bip32_source_passphrase").val("seven tattoo side laugh oil ready word deposit frame grant merry shield ride buzz display camp virus burst hip example run impact health finish");
-        $("#bip32_source_key").val("xprv9s21ZrQH143K2MEsompJYjKzjrtFDJrnbWWcN9wMDY8bSqzALQfSzesCaaUYDJiNkNvcExpswHrWJsM8mez9goDc8kWLD6qY52ME9Db3qYZ");
+        //$("#bip32_source_passphrase").val("seven tattoo side laugh oil ready word deposit frame grant merry shield ride buzz display camp virus burst hip example run impact health finish");
+        //$("#bip32_source_key").val("xprv9s21ZrQH143K2MEsompJYjKzjrtFDJrnbWWcN9wMDY8bSqzALQfSzesCaaUYDJiNkNvcExpswHrWJsM8mez9goDc8kWLD6qY52ME9Db3qYZ");
         onInput("#bip32_source_passphrase", onUpdateSourcePassphrase);
         onInput("#bip39_passphrase", onUpdateSourcePassphrase);
         
